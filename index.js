@@ -14,8 +14,35 @@ const render = require("./src/page-template.js");
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
 //TODO: Create a team members array to hold all employees
+    let teamMembers = []; //let alright?
 
 //TODO: Team manager questions (name, id, email, office number)
+    const managerQuestions = [
+        {
+            type: `input`,
+            message: `Please enter the team manager's name.`,
+            name: `name`,
+            // validate function? 
+        },
+        {
+            type: `input`,
+            message: `Please enter the team manager's id.`,
+            name: `name`,
+            // validate function? 
+        },
+        {
+            type: `input`,
+            message: `Please enter the team manager's email.`,
+            name: `name`,
+            // validate function? 
+        },
+        {
+            type: `input`,
+            message: `Please enter the team manager's office number.`,
+            name: `name`,
+            // validate function? 
+        },
+    ]
 
 //TODO: Options question (add engineer, intern or finish)
 
