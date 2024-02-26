@@ -55,9 +55,33 @@ const render = require("./src/page-template.js");
 
     console.log(menuOptions);
         
-    
-
 //TODO: Engineer questions (name, id, email, github) -> return to menu
+    const engineerQuestions = [
+        {
+            type: `input`,
+            message: `Please enter the engineer's name`,
+            name: `name`,
+            // validate: ? 
+        },
+        {
+            type: `input`,
+            message: `Please enter the engineer's id`,
+            name: `id`,
+            // validate: ? 
+        },
+        {
+            type: `input`,
+            message: `Please enter the engineer's email`,
+            name: `email`,
+            // validate: ? 
+        },
+        {
+            type: `input`,
+            message: `Please enter the engineer's GitHub profile username`,
+            name: `username`,
+            // validate: ? 
+        },
+    ]
 
 //TODO: Intern questions (name, id, email, school) -> return to menu
 
