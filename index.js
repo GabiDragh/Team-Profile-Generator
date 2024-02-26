@@ -59,31 +59,60 @@ const render = require("./src/page-template.js");
     const engineerQuestions = [
         {
             type: `input`,
-            message: `Please enter the engineer's name`,
+            message: `Please enter the engineer's name.`,
             name: `name`,
             // validate: ? 
         },
         {
             type: `input`,
-            message: `Please enter the engineer's id`,
+            message: `Please enter the engineer's id.`,
             name: `id`,
             // validate: ? 
         },
         {
             type: `input`,
-            message: `Please enter the engineer's email`,
+            message: `Please enter the engineer's email.`,
             name: `email`,
             // validate: ? 
         },
         {
             type: `input`,
-            message: `Please enter the engineer's GitHub profile username`,
+            message: `Please enter the engineer's GitHub profile username.`,
             name: `username`,
             // validate: ? 
         },
     ]
+    console.log(engineerQuestions);
 
 //TODO: Intern questions (name, id, email, school) -> return to menu
+    const internQuestions = [
+        {
+            type: `input`,
+            mesage: `Please enter the intern's name.`,
+            name: `name`,
+            // validate: ?
+        },
+        {
+            type: `input`,
+            mesage: `Please enter the intern's id.`,
+            name: `name`,
+            // validate: ?
+        },
+        {
+            type: `input`,
+            mesage: `Please enter the intern's email.`,
+            name: `name`,
+            // validate: ?
+        },
+        {
+            type: `input`,
+            mesage: `Please enter the school the intern has graduated.`,
+            name: `name`,
+            // validate: ?
+        },
+    ]
+
+    console.log(internQuestions);
 
 //TODO: When finished -> generate HTML
 
