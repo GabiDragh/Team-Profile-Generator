@@ -4,6 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const generateTeam = require("./src/page-template.js";) //page template linked
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -13,10 +14,10 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-//TODO: Create a team members array to hold all employees
+//DONE: Create a team members array to hold all employees
     let teamMembers = []; //let alright?
 
-//TODO: Team manager questions (name, id, email, office number)
+//DONE: Team manager questions (name, id, email, office number)
     const managerQuestions = [
         {
             type: `input`,
@@ -24,7 +25,7 @@ const render = require("./src/page-template.js");
             name: `name`,
             //FIXME: 
         //     validate: function (input) {
-        //         return input !== ``;
+        //         return input !== ``; empty string validation
         //  }
         },
         {
@@ -34,7 +35,7 @@ const render = require("./src/page-template.js");
             validate: function (input) {
                 return !isNaN(input) && parseInt(input) > 0;
             }
-        },
+        }, //validation for user input - positive number
         {
             type: `input`,
             message: `Please enter the team manager's email.`,
@@ -50,7 +51,7 @@ const render = require("./src/page-template.js");
     ]
     console.log(managerQuestions);
 
-//TODO: Options question (add engineer, intern or finish)
+//DONE: Options question (add engineer, intern or finish)
     const menuOptions = {
         type: `list`,
         mesage: `What would you like to do next?`,
@@ -60,7 +61,7 @@ const render = require("./src/page-template.js");
 
     console.log(menuOptions);
         
-//TODO: Engineer questions (name, id, email, github) -> return to menu
+//DONE: Engineer questions (name, id, email, github) -> return to menu
     const engineerQuestions = [
         {
             type: `input`,
@@ -89,7 +90,7 @@ const render = require("./src/page-template.js");
     ]
     console.log(engineerQuestions);
 
-//TODO: Intern questions (name, id, email, school) -> return to menu
+//DONE: Intern questions (name, id, email, school) -> return to menu
     const internQuestions = [
         {
             type: `input`,
@@ -122,13 +123,18 @@ const render = require("./src/page-template.js");
 //TODO: When finished -> generate HTML
 
 //TODO: init function for inquirer (.prompt and .then) -> initialize function
-// function init() {
+//TODO: Function to add manager
+//TODO: Function to add engineer
+//TODO: Function to add intern
+//TODO: Function to push team members in the teamMembers array
+//TODO: Function to generate html using the page-template.js file provided ()
+//TODO: Function to call functions above depending on user menu option 
     inquirer
     .prompt(managerQuestions)
     .then(answers => {
         console.log(answers);
     });
-// }
+
 
 // init();
 
