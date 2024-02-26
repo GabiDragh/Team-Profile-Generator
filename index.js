@@ -22,24 +22,29 @@ const render = require("./src/page-template.js");
             type: `input`,
             message: `Please enter the team manager's name.`,
             name: `name`,
-            // validate function? 
+            validate: function (input) {
+                if (typeof input === `string` && input.trim() !== ``) {
+                    return true;
+                } 
+                return `Please enter a valid username (text input required).`; 
+            } //function not working!
         },
         {
             type: `input`,
             message: `Please enter the team manager's id.`,
-            name: `name`,
+            name: `id`,
             // validate function? 
         },
         {
             type: `input`,
             message: `Please enter the team manager's email.`,
-            name: `name`,
+            name: `email`,
             // validate function? 
         },
         {
             type: `input`,
             message: `Please enter the team manager's office number.`,
-            name: `name`,
+            name: `officeNumber`,
             // validate function? 
         },
     ]
@@ -78,7 +83,7 @@ const render = require("./src/page-template.js");
         {
             type: `input`,
             message: `Please enter the engineer's GitHub profile username.`,
-            name: `username`,
+            name: `github`,
             // validate: ? 
         },
     ]
@@ -95,19 +100,19 @@ const render = require("./src/page-template.js");
         {
             type: `input`,
             mesage: `Please enter the intern's id.`,
-            name: `name`,
+            name: `id`,
             // validate: ?
         },
         {
             type: `input`,
             mesage: `Please enter the intern's email.`,
-            name: `name`,
+            name: `email`,
             // validate: ?
         },
         {
             type: `input`,
             mesage: `Please enter the school the intern has graduated.`,
-            name: `name`,
+            name: `school`,
             // validate: ?
         },
     ]
@@ -118,12 +123,11 @@ const render = require("./src/page-template.js");
 
 //TODO: init function for inquirer (.prompt and .then) -> initialize function
 // function init() {
-//     inquirer
-//     .prompt(managerQuestions)
-//     .then(answers) => {
-//         const userAnswers = answers;
-//         console.log(userAnswers);
-//     }
+    inquirer
+    .prompt(managerQuestions)
+    .then(answers => {
+        console.log(answers);
+    });
 // }
 
 // init();
