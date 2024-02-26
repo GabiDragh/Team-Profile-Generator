@@ -22,18 +22,18 @@ const render = require("./src/page-template.js");
             type: `input`,
             message: `Please enter the team manager's name.`,
             name: `name`,
-            //FIXME: validate: function (input) {
-            //     if (typeof input === `string` && input.trim() !== ``) {
-            //         return true;
-            //     } 
-            //     return `Please enter a valid username (text input required).`; 
-            // } 
+            //FIXME: 
+        //     validate: function (input) {
+        //         return input !== ``;
+        //  }
         },
         {
             type: `input`,
             message: `Please enter the team manager's id.`,
             name: `id`,
-            // validate function? 
+            validate: function (input) {
+                return !isNaN(input) && parseInt(input) > 0;
+            }
         },
         {
             type: `input`,
