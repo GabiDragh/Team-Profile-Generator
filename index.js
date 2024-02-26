@@ -43,8 +43,19 @@ const render = require("./src/page-template.js");
             // validate function? 
         },
     ]
+    console.log(managerQuestions);
 
 //TODO: Options question (add engineer, intern or finish)
+    const menuOptions = {
+        type: `list`,
+        mesage: `What would you like to do next?`,
+        name: `menu`,
+        choices: [`Add an engineer`, `Add an Intern`, `Finish building the team`]
+    }
+
+    console.log(menuOptions);
+        
+    
 
 //TODO: Engineer questions (name, id, email, github) -> return to menu
 
@@ -53,4 +64,14 @@ const render = require("./src/page-template.js");
 //TODO: When finished -> generate HTML
 
 //TODO: init function for inquirer (.prompt and .then) -> initialize function
+// function init() {
+//     inquirer
+//     .prompt(managerQuestions)
+//     .then(answers) => {
+//         const userAnswers = answers;
+//         console.log(userAnswers);
+//     }
+// }
+
+// init();
 
