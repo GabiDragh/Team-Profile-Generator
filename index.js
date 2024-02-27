@@ -4,7 +4,7 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const generateTeam = require("./src/page-template.js";) //page template linked
+const generateTeam = require("./src/page-template.js"); //page template linked
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -120,21 +120,44 @@ const render = require("./src/page-template.js");
 
     console.log(internQuestions);
 
-//TODO: When finished -> generate HTML
-
-//TODO: init function for inquirer (.prompt and .then) -> initialize function
 //TODO: Function to add manager
+    function addManager() {
+        inquirer
+        .prompt(managerQuestions)
+        .then(function(answers) {
+            const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber); //instantiate Manager
+            teamMembers.push(manager); //add manager to teamMembers array
+            promptMenu(); //call function to ask menuOptions
+        });
+    }
+
 //TODO: Function to add engineer
+    function addEngineer() {
+        inquirer
+        .prompt(engineerQuestions)
+        .then(function(answers) {
+            const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+            teamMembers.push(engineer);
+            promptMenu();
+        });
+    }
+
 //TODO: Function to add intern
+    function addIntern() {
+        inquirer
+        .prompt(internQuestions)
+        .then(function(answers) {
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+            teamMembers.push(intern);
+            promptMenu();
+        });
+    }
+
 //TODO: Function to push team members in the teamMembers array
+
 //TODO: Function to generate html using the page-template.js file provided ()
 //TODO: Function to call functions above depending on user menu option 
-    inquirer
-    .prompt(managerQuestions)
-    .then(answers => {
-        console.log(answers);
-    });
-
-
+//TODO: When finished -> generate HTML
+//TODO: Initialize function
 // init();
 
