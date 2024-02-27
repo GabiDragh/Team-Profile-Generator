@@ -1,0 +1,12 @@
+.jumbotron {
+background: linear-gradient(0deg, rgba(34,151,195,1) 0%, rgba(144,253,45,1) 100%);
+}
+
+.card {
+    margin: 10px;
+    background-color: rgba(144,253,45,.8);
+}
+
+.card-header {
+    background-color: rgb(34,151,195,.9);
+}
