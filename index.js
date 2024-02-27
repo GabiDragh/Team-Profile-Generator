@@ -210,7 +210,5 @@ const render = require("./utils/generateTeam.js");
 
 init();
 
-// FIXME: page-template cosmetic edits
-// DONE: validation
-// FIXME: catch error for team members functions
+
 
