@@ -12,7 +12,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
+//DONE: Write Code to gather information about the development team members, and render the HTML file.
 
 //DONE: Create a team members array to hold all employees
     let teamMembers = []; //let alright?
@@ -120,7 +120,7 @@ const render = require("./src/page-template.js");
 
     console.log(internQuestions);
 
-//TODO: Function to add manager
+//DONE: Function to add manager
     function addManager() {
         inquirer
         .prompt(managerQuestions)
@@ -132,7 +132,7 @@ const render = require("./src/page-template.js");
         });
     }
 
-//TODO: Function to add engineer
+//DONE: Function to add engineer
     function addEngineer() {
         inquirer
         .prompt(engineerQuestions)
@@ -143,7 +143,7 @@ const render = require("./src/page-template.js");
         });
     }
 
-//TODO: Function to add intern
+//DONE: Function to add intern
     function addIntern() {
         inquirer
         .prompt(internQuestions)
@@ -154,7 +154,7 @@ const render = require("./src/page-template.js");
         });
     }
 
-//TODO: Function to call menu (call functions above depending on user menu option)
+//DONE: Function to call menu (call functions above depending on user menu option)
     function promptMenu() {
         inquirer
         .prompt(menuOptions)
@@ -170,7 +170,7 @@ const render = require("./src/page-template.js");
     }
 
 
-// TODO: Function to build team (generate html using the page-template.js file provided ())
+// DONE: Function to build team (generate html using the page-template.js file provided ())
     function buildTeam() {
     const htmlTeam = generateTeam(teamMembers);
     const output = outputPath;
@@ -183,11 +183,15 @@ const render = require("./src/page-template.js");
     });
     }
 
-//TODO: Initialize function - call add manager function first
+//DONE: Initialize function - call add manager function first
     function init() {
         console.log(`Welcome to Team Profile Generator. Start by adding a Manager:`);
         addManager();
     }
 
 init();
+
+// FIXME: page-template cosmetic edits
+// FIXME: validation
+// FIXME: catch error for team members functions
 
