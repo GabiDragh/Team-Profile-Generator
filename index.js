@@ -23,30 +23,33 @@ const render = require("./src/page-template.js");
             type: `input`,
             message: `Please enter the team manager's name.`,
             name: `name`,
-            //FIXME: 
-        //     validate: function (input) {
-        //         return input !== ``; empty string validation
-        //  }
+            validate: function (input) {
+                return input !== ``; //empty string validation
+         }
         },
         {
             type: `input`,
             message: `Please enter the team manager's id.`,
             name: `id`,
             validate: function (input) {
-                return !isNaN(input) && parseInt(input) > 0;
+                return !isNaN(input) && parseInt(input) > 0; //validation for user input - positive number
             }
-        }, //validation for user input - positive number
+        }, 
         {
             type: `input`,
             message: `Please enter the team manager's email.`,
             name: `email`,
-            // validate function? 
+            validate: function (input) {
+                return input !== ``; //empty string validation
+         }
         },
         {
             type: `input`,
             message: `Please enter the team manager's office number.`,
             name: `officeNumber`,
-            // validate function? 
+            validate: function (input) {
+                return !isNaN(input) && parseInt(input) > 0; //validation for user input - positive number
+            }
         },
     ]
     console.log(managerQuestions);
@@ -67,25 +70,33 @@ const render = require("./src/page-template.js");
             type: `input`,
             message: `Please enter the engineer's name.`,
             name: `name`,
-            // validate: ? 
+            validate: function (input) {
+                return input !== ``; //empty string validation
+         }
         },
         {
             type: `input`,
             message: `Please enter the engineer's id.`,
             name: `id`,
-            // validate: ? 
+            validate: function (input) {
+                return !isNaN(input) && parseInt(input) > 0; //validation for user input - positive number
+            }
         },
         {
             type: `input`,
             message: `Please enter the engineer's email.`,
             name: `email`,
-            // validate: ? 
+            validate: function (input) {
+                return input !== ``; //empty string validation
+         }
         },
         {
             type: `input`,
             message: `Please enter the engineer's GitHub profile username.`,
             name: `github`,
-            // validate: ? 
+            validate: function (input) {
+                return input !== ``; //empty string validation
+         }
         },
     ]
     console.log(engineerQuestions);
@@ -96,25 +107,33 @@ const render = require("./src/page-template.js");
             type: `input`,
             mesage: `Please enter the intern's name.`,
             name: `name`,
-            // validate: ?
+            validate: function (input) {
+                return input !== ``; //empty string validation
+         }
         },
         {
             type: `input`,
             mesage: `Please enter the intern's id.`,
             name: `id`,
-            // validate: ?
+            validate: function (input) {
+                return !isNaN(input) && parseInt(input) > 0; //validation for user input - positive number
+            }
         },
         {
             type: `input`,
             mesage: `Please enter the intern's email.`,
             name: `email`,
-            // validate: ?
+            validate: function (input) {
+                return input !== ``; //empty string validation
+         }
         },
         {
             type: `input`,
             mesage: `Please enter the school the intern has graduated.`,
             name: `school`,
-            // validate: ?
+            validate: function (input) {
+                return input !== ``; //empty string validation
+         }
         },
     ]
 
@@ -192,6 +211,6 @@ const render = require("./src/page-template.js");
 init();
 
 // FIXME: page-template cosmetic edits
-// FIXME: validation
+// DONE: validation
 // FIXME: catch error for team members functions
 
