@@ -159,9 +159,9 @@ const render = require("./src/page-template.js");
         inquirer
         .prompt(menuOptions)
         .then (function(answers) {
-           if (answers.type === `Add an engineer`) {
+           if (answers.menu === `Add an engineer`) {
             addEngineer();
-           } else if (answers.type === `Add an Intern`) {
+           } else if (answers.menu === `Add an Intern`) {
             addIntern();
            } else {
             buildTeam();
@@ -171,9 +171,17 @@ const render = require("./src/page-template.js");
 
 
 // TODO: Function to build team (generate html using the page-template.js file provided ())
-    // function buildTeam() {
-
-    // }
+    function buildTeam() {
+    const htmlTeam = generateTeam(teamMembers);
+    const output = outputPath;
+    fs.writeFile(output, htmlTeam, function(err) {
+        if(err) {
+            console.error(`Error writing file`, err);
+        } else {
+            console.log(`Team file generated successfully!`);
+        }
+    });
+    }
 
 //TODO: Initialize function - call add manager function first
     function init() {
