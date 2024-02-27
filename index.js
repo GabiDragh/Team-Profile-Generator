@@ -127,6 +127,7 @@ const render = require("./src/page-template.js");
         .then(function(answers) {
             const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber); //instantiate Manager
             teamMembers.push(manager); //add manager to teamMembers array
+            console.log(`You have added the team Manager.`)
             promptMenu(); //call function to ask menuOptions
         });
     }
@@ -153,11 +154,32 @@ const render = require("./src/page-template.js");
         });
     }
 
-//TODO: Function to push team members in the teamMembers array
+//TODO: Function to call menu (call functions above depending on user menu option)
+    function promptMenu() {
+        inquirer
+        .prompt(menuOptions)
+        .then (function(answers) {
+           if (answers.type === `Add an engineer`) {
+            addEngineer();
+           } else if (answers.type === `Add an Intern`) {
+            addIntern();
+           } else {
+            buildTeam();
+           }
+        });
+    }
 
-//TODO: Function to generate html using the page-template.js file provided ()
-//TODO: Function to call functions above depending on user menu option 
-//TODO: When finished -> generate HTML
-//TODO: Initialize function
-// init();
+
+// TODO: Function to build team (generate html using the page-template.js file provided ())
+    // function buildTeam() {
+
+    // }
+
+//TODO: Initialize function - call add manager function first
+    function init() {
+        console.log(`Welcome to Team Profile Generator. Start by adding a Manager:`);
+        addManager();
+    }
+
+init();
 
